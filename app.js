@@ -20,14 +20,7 @@ const HTTPServer = http.createServer(app);
 const socketServer = socketIO(HTTPServer);
 
 socketServer.on('connection', socket => {
-    const ss = new SocketService(socket, roomService);
-
-    /**
-     * Context changed
-     */
-    socket.on('join-room', ss.joinRoom.bind(ss));
-    socket.on('chat-message', ss.chatMessage.bind(ss));
-    socket.on('disconnect', ss.disconnect.bind(ss));
+    new SocketService(socket, roomService)
 });
 
 HTTPServer.listen(80);

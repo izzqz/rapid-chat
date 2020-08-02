@@ -9,6 +9,10 @@ export default class SocketService {
     constructor(socket, roomService) {
         this.socket = socket;
         this.rs = roomService;
+
+        socket.on('join-room', this.joinRoom.bind(this));
+        socket.on('chat-message', this.chatMessage.bind(this));
+        socket.on('disconnect', this.disconnect.bind(this));
     }
 
     /**
