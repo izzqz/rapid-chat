@@ -4,7 +4,8 @@
 
 #### Чтобы запустить
  
-```$bash
+```sh
+npm install
 npm start
 ```
 
