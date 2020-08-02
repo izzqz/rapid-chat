@@ -26,7 +26,7 @@ export default class Chat extends React.Component {
             messages: []
         };
 
-        // From React with ❤
+        // From js with ❤
         this.sendMessage = this.sendMessage.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleEnterKeyPress = this.handleEnterKeyPress.bind(this);

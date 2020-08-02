@@ -33,7 +33,7 @@ export default class SocketService {
 
         this.updateConnectedUsers(roomName);
 
-        Logger.log('JOIN', `${username} has joined to "${roomName}"`);
+        Logger.log('JOIN', `${username} Joined "${roomName}" room`);
     }
 
     /**
