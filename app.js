@@ -1,0 +1,47 @@
+import express from 'express';
+import http from 'http';
+import socketIO from 'socket.io';
+import path from 'path';
+
+import RoomService from './services/room.service.js';
+import SocketService from './services/socket.service.js';
+
+const app = express();
+const roomService = new RoomService();
+
+app
+    .use(express.static('frontend/build'))
+    .get('*', (req, res) => {
+        const indexFile = path.resolve('frontend/build/index.html');
+        res.sendFile(indexFile);
+    });
+
+const HTTPServer = http.createServer(app);
+const socketServer = socketIO(HTTPServer);
+
+socketServer.on('connection', socket => {
+    const ss = new SocketService(socket, roomService);
+
+    /**
+     * Context changed
+     */
+    socket.on('join-room', ss.joinRoom.bind(ss));
+    socket.on('chat-message', ss.chatMessage.bind(ss));
+    socket.on('disconnect', ss.disconnect.bind(ss));
+});
+
+HTTPServer.listen(80);
+
+
+
+
+
+/*
+    Кот Феликс Ли ловец багов на службе.
+    Разбудить при баге, он начнет их ловить. (Эффективность не доказана)
+
+          |\      _,,,---,,_
+    ZZZzz /,`.-'`'    -.  ;-;;,_
+         |,4-  ) )-,_. ,\ (  `'-'
+        '---''(_/--'  `-'\_)  Felix Lee
+*/

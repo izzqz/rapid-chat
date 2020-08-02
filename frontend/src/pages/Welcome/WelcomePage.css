@@ -1,0 +1,20 @@
+.center-block {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+ol.main-list {
+    font-size: initial;
+    font-weight: 500;
+    margin-block-start: 0;
+    line-height: 24px;
+}
+
+.improvised-logo {
+    height: 70px;
+    width: 70px;
+    margin: 20px 0 20px 20px;
+}
