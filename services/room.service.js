@@ -14,9 +14,9 @@ export default class RoomService {
     state = [];
 
     /**
-     * Finds the room the user is in
+     * Returns room object by name
      * @param name
-     * @return {null|string}
+     * @return {null|{name: string, users: [{name: string, id: string}]}}
      */
     getRoom(name) {
         let foundRoom = null;
