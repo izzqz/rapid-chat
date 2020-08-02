@@ -13,7 +13,7 @@
 
 .delete-icon {
     margin-right: 12px;
-    display: none;
+    display: none !important;
 }
 
 .delete-icon:hover {
@@ -21,7 +21,7 @@
 }
 
 .room:hover .delete-icon {
-    display: block;
+    display: block !important;
 }
 
 
