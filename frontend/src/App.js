@@ -10,7 +10,8 @@ import AllRoomsPage from './pages/AllRooms/AllRoomsPage.js';
 const theme = {
     global: {
         colors: {
-            brand: '#3b4d65'
+            brand: '#3b4d65',
+            focus: '#c6c6c6'
         },
         font: {
             family: 'Roboto',
