@@ -1,0 +1,3 @@
+[submodule "rapid-chat-frontend"]
+	path = frontend
+	url = https://github.com/mr-zzq/rapid-chat-frontend.git
